@@ -1,0 +1,434 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { Upload, ShoppingBag, ShieldCheck, Heart, Clock, ChevronRight, Star, Plus, Minus } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
+import { ProductCard } from '@/components/ProductCard';
+import { mockProducts } from '@/data/products';
+import { motion } from 'framer-motion';
+
+export default function HomePage() {
+  const { setIsPrescriptionOpen } = useCart();
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  // Take the first 4 products for featured section
+  const featuredProducts = mockProducts.slice(0, 4);
+
+  const toggleFaq = (idx: number) => {
+    setActiveFaq(activeFaq === idx ? null : idx);
+  };
+
+  const faqs = [
+    {
+      q: 'How does prescription delivery work?',
+      a: 'Simply click "Upload Prescription" on our menu, input your contact information, and upload a clear photo or PDF of your doctor\'s prescription. Our clinical pharmacist will review the documents and contact you within 10-15 minutes to verify details and arrange express doorstep delivery.'
+    },
+    {
+      q: 'Do you accept insurance?',
+      a: 'Yes, we accept most major health insurance plans. During the prescription verification call, our billing team will collect your insurance details and apply eligible benefits to reduce your out-of-pocket costs.'
+    },
+    {
+      q: 'How fast is your express delivery?',
+      a: 'We offer same-day delivery for all local prescriptions. If your prescription is confirmed before 3:00 PM, you will receive your medication the same evening. All deliveries are made in temperature-controlled packages to guarantee safety.'
+    },
+    {
+      q: 'Are all your medications genuine and licensed?',
+      a: 'Absolutely. Ciyal Pharmacy is fully licensed and regulated by the national medical boards. All medications are sourced directly from FDA-approved manufacturers and certified distributors, maintaining strict temperature controls during transport and storage.'
+    }
+  ];
+
+  const stats = [
+    { value: '10,000+', label: 'Local Patients' },
+    { value: '100%', label: 'Authentic Medicines' },
+    { value: '15 Mins', label: 'Average Pharmacist Review' },
+    { value: 'Same Day', label: 'Local Delivery' }
+  ];
+
+  return (
+    <div className="font-inter bg-bg-custom pb-16">
+      
+      {/* 1. Hero Section */}
+      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-blue-50/40 via-white to-bg-custom">
+        {/* Floating background decorative blur */}
+        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse-slow" />
+        <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] -z-10" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Hero Details */}
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="inline-flex items-center space-x-1.5 bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider"
+              >
+                <ShieldCheck className="h-4 w-4" />
+                <span>Fully Licensed & Clinical Grade</span>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-manrope font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.1]"
+              >
+                Your Trusted Neighborhood <br className="hidden sm:inline" />
+                <span className="text-primary bg-gradient-to-r from-primary to-blue-800 bg-clip-text text-transparent">Pharmacy, Simplified.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                Get genuine medications, expert pharmacist advice, and same-day delivery. Upload your prescription online or browse our catalog, and we will handle the rest.
+              </motion.p>
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+              >
+                <button
+                  onClick={() => setIsPrescriptionOpen(true)}
+                  className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-xl shadow-primary/20 hover:scale-[1.02] flex items-center justify-center space-x-2"
+                >
+                  <Upload className="h-4 w-4" />
+                  <span>Order Prescription Now</span>
+                </button>
+                <Link
+                  href="/shop"
+                  className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-sm flex items-center justify-center space-x-2 hover:scale-[1.02]"
+                >
+                  <ShoppingBag className="h-4 w-4 text-primary" />
+                  <span>Browse Products</span>
+                </Link>
+              </motion.div>
+
+              {/* Stats Strip */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left"
+              >
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="border-l border-slate-200 pl-4">
+                    <h3 className="font-manrope font-extrabold text-2xl text-slate-900 leading-tight">
+                      {stat.value}
+                    </h3>
+                    <p className="text-xs text-slate-500 font-medium mt-1 uppercase tracking-wider">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right Hero Image Layout */}
+            <div className="lg:col-span-5 relative flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative w-full max-w-[420px] aspect-[4/5] rounded-[24px] overflow-hidden shadow-2xl bg-white border border-slate-100"
+              >
+                <img
+                  src="/assets/clinic-tablet-hands-doctor-patient-600nw-2472677039.webp"
+                  alt="Doctor showing digital prescription to patient"
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Floating Pharmacy badge */}
+                <div className="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-2xl border border-white/60 flex items-center space-x-3.5 shadow-lg">
+                  <div className="h-10 w-10 bg-secondary/15 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                    <ShieldCheck className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="block text-xs font-bold text-slate-800 font-manrope">Express Local Delivery</span>
+                    <span className="block text-[10px] text-slate-500 mt-0.5">Temperature-controlled same-day shipping</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Why Choose Us */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest block">Pharmacy Excellence</span>
+            <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+              Clinical Quality Meets Modern Trust
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
+              We leverage advanced logistics and clinical pharmaceutical support to protect your wellness safely and efficiently.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-slate-50/50 border border-slate-100 p-8 rounded-2xl space-y-5 premium-shadow-hover">
+              <div className="h-12 w-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shadow-sm">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="font-manrope font-bold text-lg text-slate-800">100% Genuine Medicines</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                All medications are sourced directly from authorized manufacturers with certified chemical compliance logs and storage records.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-slate-50/50 border border-slate-100 p-8 rounded-2xl space-y-5 premium-shadow-hover">
+              <div className="h-12 w-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center shadow-sm">
+                <Clock className="h-6 w-6" />
+              </div>
+              <h3 className="font-manrope font-bold text-lg text-slate-800">Express Same-Day Delivery</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Orders are processed and transported locally in specialized medical cooling boxes, keeping sensitive biologicals completely stable.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-slate-50/50 border border-slate-100 p-8 rounded-2xl space-y-5 premium-shadow-hover">
+              <div className="h-12 w-12 bg-accent/10 text-primary rounded-xl flex items-center justify-center shadow-sm">
+                <Heart className="h-6 w-6" />
+              </div>
+              <h3 className="font-manrope font-bold text-lg text-slate-800">Direct Pharmacist Support</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Talk directly with our licensed clinical staff for drug consultation, interactions, checkups, and general safety reviews.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. How It Works Flow */}
+      <section className="py-20 bg-bg-custom">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest block font-manrope">Refill Guide</span>
+            <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+              Get Your Medicines In 3 Simple Steps
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            {/* Step 1 */}
+            <div className="relative flex flex-col items-center text-center space-y-4">
+              <div className="w-16 h-16 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-md font-manrope font-extrabold text-lg text-primary">
+                1
+              </div>
+              <h3 className="font-manrope font-bold text-base text-slate-800">Upload Prescription</h3>
+              <p className="text-slate-500 text-xs leading-relaxed max-w-[240px]">
+                Click upload prescription to securely transmit a photo of your doctor\'s note in seconds.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative flex flex-col items-center text-center space-y-4">
+              <div className="w-16 h-16 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-md font-manrope font-extrabold text-lg text-primary">
+                2
+              </div>
+              <h3 className="font-manrope font-bold text-base text-slate-800">Pharmacist Review</h3>
+              <p className="text-slate-500 text-xs leading-relaxed max-w-[240px]">
+                A clinical specialist reviews the dosage, coordinates with your insurance, and calls you for confirmation.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative flex flex-col items-center text-center space-y-4">
+              <div className="w-16 h-16 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-md font-manrope font-extrabold text-lg text-primary">
+                3
+              </div>
+              <h3 className="font-manrope font-bold text-base text-slate-800">Doorstep Delivery</h3>
+              <p className="text-slate-500 text-xs leading-relaxed max-w-[240px]">
+                Our express courier delivers the medication in a sealed, temperature-regulated pack directly to your door.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Featured Products Grid */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
+            <div className="space-y-2">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest block">Pharmacy Essentials</span>
+              <h2 className="font-manrope font-extrabold text-3xl text-slate-900 tracking-tight">
+                Featured Wellness Products
+              </h2>
+            </div>
+            <Link
+              href="/shop"
+              className="group text-sm font-bold text-primary hover:text-primary-hover flex items-center transition-colors"
+            >
+              <span>Explore Entire Catalog</span>
+              <ChevronRight className="h-4 w-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Clinical Testimonials */}
+      <section className="py-20 bg-slate-50/50 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left intro text */}
+            <div className="lg:col-span-5 space-y-4">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest block">Patient Trust</span>
+              <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
+                What Local Families Say About Ciyal
+              </h2>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Read clinical success stories and delivery testimonials from our community who rely on us for their chronic care plans.
+              </p>
+              
+              {/* Overall trust rating */}
+              <div className="pt-4 flex items-center space-x-3.5">
+                <div className="flex text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-current" />
+                  ))}
+                </div>
+                <span className="text-sm font-extrabold text-slate-800">4.9 / 5.0 (1,200+ Reviews)</span>
+              </div>
+            </div>
+
+            {/* Right slider testimonials grid */}
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm">
+                <div className="flex text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="text-slate-600 text-xs italic leading-relaxed">
+                  "Uploading my blood pressure prescription took 30 seconds. Within 15 minutes, a pharmacist called to discuss coverage, and the medication arrived at my apartment that afternoon. Unbelievably fast!"
+                </p>
+                <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-800">Emily Robinson</span>
+                  <span className="text-[10px] text-slate-400">Verified Patient</span>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm">
+                <div className="flex text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="text-slate-600 text-xs italic leading-relaxed">
+                  "As a senior with mobility issues, having temperature-controlled prescription delivery has been a lifesaver. The pharmacist consulted with me on drug interactions with complete patience."
+                </p>
+                <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-800">Marcus Sterling</span>
+                  <span className="text-[10px] text-slate-400">Verified Patient</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Accordion FAQs */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16 space-y-3">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest block font-manrope">FAQ Helpdesk</span>
+            <h2 className="font-manrope font-extrabold text-3xl text-slate-900 tracking-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="border border-slate-100 rounded-2xl overflow-hidden bg-slate-50/50 transition-colors"
+                >
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-slate-50 transition-colors"
+                  >
+                    <span className="font-manrope font-bold text-slate-800 text-sm sm:text-base">
+                      {faq.q}
+                    </span>
+                    <span className="text-slate-400 ml-4 shrink-0 p-1 bg-white border border-slate-200/65 rounded-lg">
+                      {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                    </span>
+                  </button>
+
+                  <div
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      isOpen ? 'max-h-60 border-t border-slate-150' : 'max-h-0'
+                    }`}
+                  >
+                    <div className="px-6 py-5 bg-white text-slate-500 text-xs sm:text-sm leading-relaxed">
+                      {faq.a}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Bottom CTA Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="bg-primary rounded-3xl p-8 sm:p-12 lg:p-16 text-white text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary to-blue-800 -z-10" />
+          {/* Decorative shapes */}
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 rounded-full blur-2xl" />
+          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-accent/10 rounded-full blur-2xl" />
+
+          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+            <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+              Ready to Refill Your Active Prescription?
+            </h2>
+            <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
+              Upload your files now. Our expert clinical pharmacists are online and standing by to review your prescription requirements immediately.
+            </p>
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onClick={() => setIsPrescriptionOpen(true)}
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 text-primary font-bold px-8 py-4 rounded-2xl text-sm transition-all duration-200 shadow-md flex items-center justify-center space-x-2"
+              >
+                <Upload className="h-4 w-4" />
+                <span>Upload Medical Note</span>
+              </button>
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto bg-primary-hover/50 hover:bg-primary-hover border border-white/20 text-white font-bold px-8 py-4 rounded-2xl text-sm transition-all duration-200 flex items-center justify-center"
+              >
+                Contact a Pharmacist
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
