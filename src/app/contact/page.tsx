@@ -71,7 +71,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-1">
                   <span className="block font-manrope font-bold text-slate-800 text-sm">Pharmacy Location</span>
-                  <span className="block text-slate-500 text-xs sm:text-sm">123 Health Avenue, Medicity</span>
+                  <span className="block text-slate-500 text-xs sm:text-sm">Chikakore Junction, Kubwa, Abuja, Nigeria</span>
                   <a
                     href="#location-map"
                     className="text-xs font-bold text-primary hover:underline inline-flex items-center pt-1"
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-1">
                   <span className="block font-manrope font-bold text-slate-800 text-sm">Direct Helpdesk</span>
-                  <span className="block text-slate-500 text-xs sm:text-sm font-semibold">+1 234 567 890</span>
+                  <span className="block text-slate-500 text-xs sm:text-sm font-semibold">+234 803 914 4988</span>
                   <span className="block text-slate-400 text-xs">support@ciyalpharmacy.com</span>
                 </div>
               </div>
@@ -229,54 +229,46 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 3. Styled Mockup Location Map */}
+      {/* 3. Real Google Maps embed */}
       <section id="location-map" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="space-y-4 mb-6">
-          <h3 className="font-manrope font-extrabold text-xl text-slate-900">Find Us Locally</h3>
-          <p className="text-slate-500 text-xs sm:text-sm">We are conveniently located next to the Medicity General Hospital.</p>
+        <div className="space-y-2 mb-6">
+          <h3 className="font-manrope font-extrabold text-xl text-slate-900">Find Us at Kubwa, Abuja</h3>
+          <p className="text-slate-500 text-xs sm:text-sm">We are located at Chikakore Junction, Kubwa, Abuja, Nigeria. Easy access from the Kubwa Expressway.</p>
         </div>
 
-        {/* Mock Map Panel */}
-        <div className="h-80 sm:h-96 bg-[#EFF2F5] border border-slate-200 rounded-3xl overflow-hidden relative shadow-inner flex items-center justify-center">
-          {/* Mock Map Styling using divs and SVG grids */}
-          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#CBD5E1_1px,transparent_1px)] [background-size:16px_16px]" />
-          
-          {/* Custom Roads & Rivers Mockup SVGs */}
-          <svg className="absolute inset-0 w-full h-full text-slate-350" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-10 100 H1500" stroke="#E2E8F0" strokeWidth="24" />
-            <path d="M100 -10 V500" stroke="#E2E8F0" strokeWidth="20" />
-            <path d="M400 -10 V500" stroke="#E2E8F0" strokeWidth="32" />
-            <path d="M800 -10 L200 500" stroke="#E2E8F0" strokeWidth="16" />
-            <path d="M-10 320 H1500" stroke="#E2E8F0" strokeWidth="28" />
-            <path d="M600 -10 L1100 500" stroke="#94A3B8" strokeWidth="8" strokeDasharray="6 6" /> {/* Train */}
-            {/* River */}
-            <path d="M-10 420 Q 300 450, 600 390 T 1500 440" stroke="#93C5FD" strokeWidth="30" strokeLinecap="round" opacity="0.6" />
-          </svg>
+        <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-md h-80 sm:h-[420px] w-full">
+          <iframe
+            title="Ciyal Pharmacy Location – Kubwa, Abuja"
+            src="https://maps.google.com/maps?q=Chikakore+Junction,+Kubwa,+Abuja,+Nigeria&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
 
-          {/* Hospital Placeholder Area */}
-          <div className="absolute left-[calc(400px+40px)] top-[140px] bg-slate-300/60 border border-slate-400/40 px-4 py-3 rounded-xl text-center shadow-sm">
-            <span className="block text-[10px] font-bold text-slate-650 uppercase tracking-widest leading-none">Medicity Hospital</span>
-            <span className="block text-[8px] text-slate-500 mt-1">General Clinic Ward</span>
-          </div>
-
-          {/* Ciyal Pharmacy Pin */}
-          <div className="absolute left-[calc(400px+80px)] top-[260px] text-center z-10">
-            <div className="relative flex items-center justify-center">
-              <span className="absolute animate-ping inline-flex h-8 w-8 rounded-full bg-primary opacity-25" />
-              <div className="h-10 w-10 bg-primary text-white rounded-full flex items-center justify-center shadow-lg border-2 border-white relative z-10 hover:scale-110 transition-transform cursor-pointer">
-                <MapPin className="h-5 w-5" />
-              </div>
-            </div>
-            <div className="mt-2 bg-slate-900 text-white px-3 py-1.5 rounded-lg shadow-md text-[10px] font-bold inline-block border border-slate-800">
-              Ciyal Pharmacy (123 Health Ave)
-            </div>
-          </div>
-
-          {/* Map Controls Mock */}
-          <div className="absolute bottom-4 right-4 bg-white border border-slate-200/80 px-2.5 py-2 rounded-xl flex flex-col space-y-1.5 shadow-sm text-xs font-extrabold text-slate-700">
-            <button className="h-6 w-6 hover:bg-slate-50 rounded flex items-center justify-center">+</button>
-            <button className="h-6 w-6 hover:bg-slate-50 rounded flex items-center justify-center">-</button>
-          </div>
+        {/* Quick directions card */}
+        <div className="mt-4 flex flex-col sm:flex-row gap-4">
+          <a
+            href="https://www.google.com/maps/search/Chikakore+Junction,+Kubwa,+Abuja,+Nigeria"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors shadow-md shadow-primary/15"
+          >
+            <MapPin className="h-4 w-4" />
+            <span>Open in Google Maps</span>
+          </a>
+          <a
+            href="https://waze.com/ul?q=Chikakore+Junction+Kubwa+Abuja"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 hover:text-primary hover:border-primary text-sm font-semibold px-6 py-3 rounded-xl transition-colors"
+          >
+            <ExternalLink className="h-4 w-4" />
+            <span>Navigate with Waze</span>
+          </a>
         </div>
       </section>
 

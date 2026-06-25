@@ -1,19 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { Upload, ShoppingBag, ShieldCheck, Heart, Clock, ChevronRight, Star, Plus, Minus } from 'lucide-react';
+import { Upload, ShoppingBag, ShieldCheck, Heart, Clock, ChevronRight, ChevronLeft, Star, Plus, Minus } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import { ProductCard } from '@/components/ProductCard';
-import { mockProducts } from '@/data/products';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HomePage() {
   const { setIsPrescriptionOpen } = useCart();
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  // Take the first 4 products for featured section
-  const featuredProducts = mockProducts.slice(0, 4);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   const toggleFaq = (idx: number) => {
     setActiveFaq(activeFaq === idx ? null : idx);
@@ -33,14 +30,59 @@ export default function HomePage() {
       a: 'We offer same-day delivery for all local prescriptions. If your prescription is confirmed before 3:00 PM, you will receive your medication the same evening. All deliveries are made in temperature-controlled packages to guarantee safety.'
     },
     {
-      q: 'Are all your medications genuine and licensed?',
+      q: 'Are all your medications licensed and certified?',
       a: 'Absolutely. Ciyal Pharmacy is fully licensed and regulated by the national medical boards. All medications are sourced directly from FDA-approved manufacturers and certified distributors, maintaining strict temperature controls during transport and storage.'
     }
   ];
 
+  const reviews = [
+    {
+      text: '"Uploading my blood pressure prescription took 30 seconds. Within 15 minutes, a pharmacist called to discuss coverage, and the medication arrived at my apartment that afternoon. Unbelievably fast!"',
+      name: 'Emily Robinson',
+      role: 'Verified Patient',
+      rating: 5,
+    },
+    {
+      text: '"As a senior with mobility issues, having temperature-controlled prescription delivery has been a lifesaver. The pharmacist consulted with me on drug interactions with complete patience."',
+      name: 'Marcus Sterling',
+      role: 'Verified Patient',
+      rating: 5,
+    },
+    {
+      text: '"I was worried about sourcing my diabetes medication reliably, but Ciyal Pharmacy has been consistently excellent. They called me proactively when my refill was due. Exceptional service!"',
+      name: 'Adaeze Okafor',
+      role: 'Regular Customer',
+      rating: 5,
+    },
+    {
+      text: '"The booking system on WhatsApp is super convenient. I booked a consultation in seconds and the pharmacist was incredibly knowledgeable. I recommend Ciyal to everyone in Kubwa."',
+      name: 'Chukwuemeka Nwosu',
+      role: 'Verified Patient',
+      rating: 5,
+    },
+  ];
+
+  const VISIBLE = 2; // how many cards shown at once on desktop
+
+  const goNext = useCallback(() => {
+    setDirection(1);
+    setReviewIndex((prev) => (prev + 1) % reviews.length);
+  }, [reviews.length]);
+
+  const goPrev = () => {
+    setDirection(-1);
+    setReviewIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
+  // Auto-advance every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(goNext, 4000);
+    return () => clearInterval(timer);
+  }, [goNext]);
+
   const stats = [
     { value: '10,000+', label: 'Local Patients' },
-    { value: '100%', label: 'Authentic Medicines' },
+    { value: '100%', label: 'Certified Medicines' },
     { value: '15 Mins', label: 'Average Pharmacist Review' },
     { value: 'Same Day', label: 'Local Delivery' }
   ];
@@ -85,7 +127,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               >
-                Get genuine medications, expert pharmacist advice, and same-day delivery. Upload your prescription online or browse our catalog, and we will handle the rest.
+                Get certified medications, expert pharmacist advice, and same-day delivery. Upload your prescription online or visit us in Kubwa, Abuja, and we will handle the rest.
               </motion.p>
 
               {/* CTAs */}
@@ -103,11 +145,11 @@ export default function HomePage() {
                   <span>Order Prescription Now</span>
                 </button>
                 <Link
-                  href="/shop"
+                  href="/blog"
                   className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-sm flex items-center justify-center space-x-2 hover:scale-[1.02]"
                 >
                   <ShoppingBag className="h-4 w-4 text-primary" />
-                  <span>Browse Products</span>
+                  <span>Read Our Blog</span>
                 </Link>
               </motion.div>
 
@@ -259,32 +301,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Featured Products Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
-            <div className="space-y-2">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest block">Pharmacy Essentials</span>
-              <h2 className="font-manrope font-extrabold text-3xl text-slate-900 tracking-tight">
-                Featured Wellness Products
-              </h2>
-            </div>
-            <Link
-              href="/shop"
-              className="group text-sm font-bold text-primary hover:text-primary-hover flex items-center transition-colors"
-            >
-              <span>Explore Entire Catalog</span>
-              <ChevronRight className="h-4 w-4 ml-1 transform group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* 5. Clinical Testimonials */}
       <section className="py-20 bg-slate-50/50 border-y border-slate-100">
@@ -312,35 +330,67 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right slider testimonials grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm">
-                <div className="flex text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
+            {/* Right: Auto-sliding review carousel */}
+            <div className="lg:col-span-7">
+              <div className="relative overflow-hidden">
+                {/* Slide window */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[reviewIndex, (reviewIndex + 1) % reviews.length].map((ri, slot) => (
+                    <AnimatePresence key={`slot-${slot}`} mode="wait">
+                      <motion.div
+                        key={`review-${ri}-slot-${slot}`}
+                        initial={{ opacity: 0, x: direction * 60 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -direction * 60 }}
+                        transition={{ duration: 0.45, ease: 'easeInOut' }}
+                        className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm flex flex-col"
+                      >
+                        <div className="flex text-amber-500">
+                          {[...Array(reviews[ri].rating)].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-current" />
+                          ))}
+                        </div>
+                        <p className="text-slate-600 text-xs italic leading-relaxed flex-1">
+                          {reviews[ri].text}
+                        </p>
+                        <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
+                          <span className="text-xs font-bold text-slate-800">{reviews[ri].name}</span>
+                          <span className="text-[10px] text-slate-400">{reviews[ri].role}</span>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
                   ))}
                 </div>
-                <p className="text-slate-600 text-xs italic leading-relaxed">
-                  "Uploading my blood pressure prescription took 30 seconds. Within 15 minutes, a pharmacist called to discuss coverage, and the medication arrived at my apartment that afternoon. Unbelievably fast!"
-                </p>
-                <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-800">Emily Robinson</span>
-                  <span className="text-[10px] text-slate-400">Verified Patient</span>
-                </div>
-              </div>
 
-              <div className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm">
-                <div className="flex text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-slate-600 text-xs italic leading-relaxed">
-                  "As a senior with mobility issues, having temperature-controlled prescription delivery has been a lifesaver. The pharmacist consulted with me on drug interactions with complete patience."
-                </p>
-                <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-800">Marcus Sterling</span>
-                  <span className="text-[10px] text-slate-400">Verified Patient</span>
+                {/* Navigation controls */}
+                <div className="flex items-center justify-center gap-4 mt-6">
+                  <button
+                    onClick={goPrev}
+                    className="h-9 w-9 rounded-full border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition-all"
+                    aria-label="Previous review"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+                  {/* Dot indicators */}
+                  <div className="flex gap-2">
+                    {reviews.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => { setDirection(i > reviewIndex ? 1 : -1); setReviewIndex(i); }}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          i === reviewIndex ? 'w-6 bg-primary' : 'w-2 bg-slate-200 hover:bg-slate-300'
+                        }`}
+                        aria-label={`Go to review ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    onClick={goNext}
+                    className="h-9 w-9 rounded-full border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-600 hover:text-primary hover:border-primary transition-all"
+                    aria-label="Next review"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
                 </div>
               </div>
             </div>

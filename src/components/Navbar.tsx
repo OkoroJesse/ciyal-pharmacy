@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/shop' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Services', href: '/services' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
@@ -87,11 +87,11 @@ export const Navbar: React.FC = () => {
           {/* Action Buttons (Cart, Upload, Contact) */}
           <div className="hidden lg:flex items-center space-x-6">
             <a
-              href="tel:+1234567890"
+              href="tel:+2348039144988"
               className="flex items-center text-sm font-semibold text-slate-700 hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4 mr-2 text-primary" />
-              <span>+1 234 567 890</span>
+              <span>+234 803 914 4988</span>
             </a>
 
             {/* Shopping Cart button */}
@@ -186,11 +186,11 @@ export const Navbar: React.FC = () => {
                     <span>Book Appointment</span>
                   </button>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+2348039144988"
                     className="flex items-center justify-center text-sm font-semibold text-slate-700 py-3 hover:text-primary transition-colors"
                   >
                     <Phone className="h-4 w-4 mr-2 text-primary" />
-                    <span>+1 234 567 890</span>
+                    <span>+234 803 914 4988</span>
                   </a>
                 </div>
               </div>

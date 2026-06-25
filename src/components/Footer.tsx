@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <h4 className="font-manrope font-semibold text-white text-base">Fully Licensed Pharmacy</h4>
-              <p className="text-sm text-slate-400 mt-1">100% genuine medicines dispensed by licensed pharmacists.</p>
+              <p className="text-sm text-slate-400 mt-1">100% certified medicines dispensed by licensed pharmacists.</p>
             </div>
           </div>
           <div className="flex items-start space-x-4">
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
                 <Link href="/" className="text-slate-400 hover:text-white text-sm transition-colors">Home Page</Link>
               </li>
               <li>
-                <Link href="/shop" className="text-slate-400 hover:text-white text-sm transition-colors">Shop Medicines</Link>
+                <Link href="/blog" className="text-slate-400 hover:text-white text-sm transition-colors">Health Blog</Link>
               </li>
               <li>
                 <Link href="/services" className="text-slate-400 hover:text-white text-sm transition-colors">Our Services</Link>
@@ -108,13 +108,13 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-manrope font-semibold text-white text-sm uppercase tracking-wider mb-5">Contact Details</h4>
             <ul className="space-y-4">
-              <li className="flex items-center space-x-3 text-sm text-slate-400">
-                <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>123 Health Avenue, Medicity</span>
+              <li className="flex items-start space-x-3 text-sm text-slate-400">
+                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Chikakore Junction, Kubwa,<br />Abuja, Nigeria</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-slate-400">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>+1 234 567 890</span>
+                <span>+234 803 914 4988</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-slate-400">
                 <Clock className="h-5 w-5 text-primary shrink-0" />
