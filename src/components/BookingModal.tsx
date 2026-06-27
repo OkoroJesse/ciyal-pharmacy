@@ -31,7 +31,7 @@ export const BookingModal: React.FC = () => {
         `Please let me know if this slot is available. Thank you!`;
 
       const encodedText = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/2348039144988?text=${encodedText}`;
+      const whatsappUrl = `https://wa.me/2349069184683?text=${encodedText}`;
 
       // Open WhatsApp API
       window.open(whatsappUrl, '_blank');

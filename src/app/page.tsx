@@ -223,7 +223,7 @@ export default function HomePage() {
               <div className="h-12 w-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shadow-sm">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className="font-manrope font-bold text-lg text-slate-800">100% Genuine Medicines</h3>
+              <h3 className="font-manrope font-bold text-lg text-slate-800"> Medicines</h3>
               <p className="text-slate-500 text-sm leading-relaxed">
                 All medications are sourced directly from authorized manufacturers with certified chemical compliance logs and storage records.
               </p>

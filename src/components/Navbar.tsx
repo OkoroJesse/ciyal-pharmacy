@@ -50,11 +50,10 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-primary flex items-center justify-center shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
-              {/* Fallback to text logo if image fails or loading */}
-              <span className="text-white font-manrope font-bold text-lg">C</span>
+            <div className="relative h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <img src="/assets/logo.png" alt="Ciyal Pharmacy Logo" className="h-full w-full object-contain" />
             </div>
-            <span className="font-manrope font-extrabold text-xl tracking-tight text-slate-900">
+            <span className="font-manrope font-extrabold text-xl tracking-tight text-slate-900 hidden sm:block">
               Ciyal<span className="text-primary font-medium">Pharmacy</span>
             </span>
           </Link>
@@ -190,7 +189,7 @@ export const Navbar: React.FC = () => {
                     className="flex items-center justify-center text-sm font-semibold text-slate-700 py-3 hover:text-primary transition-colors"
                   >
                     <Phone className="h-4 w-4 mr-2 text-primary" />
-                    <span>+234 803 914 4988</span>
+                    <span>+234 9069184683</span>
                   </a>
                 </div>
               </div>

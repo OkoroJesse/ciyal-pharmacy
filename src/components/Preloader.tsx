@@ -46,7 +46,7 @@ export const Preloader: React.FC = () => {
             y: -50,
             transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } 
           }}
-          className="fixed inset-0 z-50 bg-slate-900 flex flex-col items-center justify-center font-manrope selection:bg-none"
+          className="fixed inset-0 z-50 bg-[#F4F8FB] flex flex-col items-center justify-center font-manrope selection:bg-none"
         >
           {/* Animated pulsing brand emblem */}
           <motion.div
@@ -54,11 +54,6 @@ export const Preloader: React.FC = () => {
             animate={{ 
               scale: [0.9, 1.05, 1], 
               opacity: 1,
-              boxShadow: [
-                "0 0 0 0px rgba(34, 197, 94, 0)",
-                "0 0 0 15px rgba(34, 197, 94, 0.15)",
-                "0 0 0 0px rgba(34, 197, 94, 0)"
-              ]
             }}
             transition={{ 
               duration: 1.8, 
@@ -67,9 +62,9 @@ export const Preloader: React.FC = () => {
               repeat: Infinity,
               repeatDelay: 0.2
             }}
-            className="h-16 w-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 mb-8 border border-white/10"
+            className="h-32 w-32 md:h-40 md:w-40 flex items-center justify-center mb-6"
           >
-            <span className="text-white text-2xl font-extrabold">C</span>
+            <img src="/assets/logo.png" alt="Ciyal Pharmacy Logo" className="w-full h-full object-contain" />
           </motion.div>
 
           {/* Typing brand text */}
@@ -77,13 +72,13 @@ export const Preloader: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex items-center font-extrabold text-2xl sm:text-3xl tracking-tight text-white"
+            className="flex items-center font-extrabold text-2xl sm:text-3xl tracking-tight text-slate-800"
           >
             {brandName.split("").map((char, index) => (
               <motion.span
                 key={index}
                 variants={letterVariants}
-                className={char === " " ? "w-2.5 sm:w-3" : index >= 5 ? "text-primary font-medium" : "text-white"}
+                className={char === " " ? "w-2.5 sm:w-3" : index >= 5 ? "text-primary font-medium" : "text-slate-800"}
               >
                 {char}
               </motion.span>

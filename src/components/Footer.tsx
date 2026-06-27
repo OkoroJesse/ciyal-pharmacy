@@ -60,8 +60,8 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-manrope font-bold text-base">C</span>
+              <div className="h-12 w-12 bg-white rounded-xl p-1 flex items-center justify-center">
+                <img src="/assets/logo.png" alt="Ciyal Pharmacy Logo" className="h-full w-full object-contain" />
               </div>
               <span className="font-manrope font-extrabold text-lg text-white tracking-tight">
                 Ciyal<span className="text-primary font-medium">Pharmacy</span>
