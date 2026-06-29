@@ -139,19 +139,16 @@ export default function AboutPage() {
             A Conversation with Our Director
           </h2>
         </div>
-        <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-slate-900 flex items-center justify-center group border border-slate-200">
-          {/* Replace this with an actual iframe or <video> tag when you have the file/link */}
-          <div className="absolute inset-0 bg-slate-800 flex flex-col items-center justify-center text-white space-y-4 p-6 text-center z-10">
-            <div className="h-16 w-16 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors cursor-pointer border border-white/10">
-              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-            <p className="font-manrope font-bold text-base text-slate-100 mt-2">Pharm. Iyalla Audu Ali Chris — Founder Interview</p>
-            <p className="text-xs text-slate-400 max-w-sm">
-              Replace this placeholder block with your video embed code (like YouTube iframe) or upload the video file to <code>/public/assets/</code> and use an HTML5 <code>&lt;video&gt;</code> tag here.
-            </p>
-          </div>
+        <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-slate-900 flex items-center justify-center border border-slate-200">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            preload="metadata"
+            poster="/assets/founder.jpg"
+          >
+            <source src="/assets/ciyal interview 2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
