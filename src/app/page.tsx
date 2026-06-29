@@ -91,26 +91,26 @@ export default function HomePage() {
     <div className="font-inter bg-bg-custom pb-16">
       
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-28 pb-24 lg:pt-40 lg:pb-36 flex items-center min-h-[600px] lg:min-h-[750px]">
+      <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-20 flex items-center min-h-[450px] lg:min-h-[550px]">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-slate-900">
           <img 
             src="/assets/hero-bg.jpg" 
             alt="Ciyal Pharmacy Storefront" 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center opacity-80"
           />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-slate-900/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent" />
+          {/* Lighter Overlay */}
+          <div className="absolute inset-0 bg-slate-900/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl space-y-8 text-left">
+          <div className="max-w-2xl space-y-6 text-left">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center space-x-1.5 bg-secondary/20 text-white border border-secondary/30 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-sm"
+              className="inline-flex items-center space-x-1.5 bg-secondary/30 text-white border border-secondary/40 text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md"
             >
               <ShieldCheck className="h-4 w-4" />
               <span>Fully Licensed & Clinical Grade</span>
@@ -120,7 +120,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-manrope font-extrabold text-4xl sm:text-5xl lg:text-7xl text-white tracking-tight leading-[1.1]"
+              className="font-manrope font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.15]"
             >
               Your Trusted Neighborhood <br className="hidden sm:inline" />
               <span className="text-[#38BDF8]">Pharmacy, Simplified.</span>
