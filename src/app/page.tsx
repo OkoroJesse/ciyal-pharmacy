@@ -100,8 +100,8 @@ export default function HomePage() {
             className="w-full h-full object-cover object-center opacity-80"
           />
           {/* Lighter Overlay */}
-          <div className="absolute inset-0 bg-slate-900/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent" />
+          <div className="absolute inset-0 bg-slate-900/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/20 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -225,6 +225,51 @@ export default function HomePage() {
               <p className="text-slate-500 text-sm leading-relaxed">
                 Talk directly with our licensed clinical staff for drug consultation, interactions, checkups, and general safety reviews.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 Director / Founder Section */}
+      <section className="py-20 bg-slate-50/50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Image */}
+            <div className="lg:col-span-5 flex items-center justify-center">
+              <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[24px] overflow-hidden shadow-2xl border border-slate-200">
+                <img
+                  src="/assets/founder.jpg"
+                  alt="Pharm. Iyalla Audu Ali Chris"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Right Text */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest block font-manrope">Leadership</span>
+              <div>
+                <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+                  Pharm. Iyalla Audu Ali Chris
+                </h2>
+                <p className="text-sm font-bold text-primary mt-1">B.Pharm, FPCPharm, MSc Public Health</p>
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-widest mt-1">Director, Ciyal Healthcare Ltd</p>
+              </div>
+              
+              <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p>
+                  Pharm. Iyalla Audu Ali Chris is a highly accomplished pharmacist, public health professional, and healthcare leader with over a decade of experience spanning community pharmacy, hospital pharmacy, pharmaceutical supply chain management, and health systems strengthening. As the Director of Ciyal Healthcare Ltd, he is committed to delivering high-quality, patient-centered healthcare services while promoting innovation, professionalism, and excellence in pharmaceutical practice.
+                </p>
+                <p>
+                  A graduate of the University of Jos with a Bachelor of Pharmacy (B.Pharm) degree, he is a Fellow of the West African Postgraduate College of Pharmacists (FPCPharm) in Clinical Pharmacy and holds a Master of Science (MSc) in Public Health. His professional experience includes serving as Superintendent Pharmacist, Head of Pharmacy Department at some public and private Hospitals, and contributing to national pharmaceutical supply chain initiatives under the Federal Ministry of Health, Nigeria.
+                </p>
+                <p>
+                  Beyond clinical practice, Pharm. Iyalla is an experienced administrator and healthcare advocate. He currently serves as Secretary of the Association of Community Pharmacists of Nigeria (ACPN), FCT Branch, where he provides strategic leadership, policy support, stakeholder engagement, and professional advocacy for the advancement of pharmacy practice.
+                </p>
+                <p>
+                  At Ciyal Healthcare Ltd, his vision is to build a trusted healthcare organization that delivers quality pharmaceutical services, public health solutions, and healthcare consultancy while embracing global best practices, regulatory compliance, and continuous innovation. His leadership is driven by integrity, excellence, and a passion for improving health outcomes within Nigeria and beyond.
+                </p>
+              </div>
             </div>
           </div>
         </div>

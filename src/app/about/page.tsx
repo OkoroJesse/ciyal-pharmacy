@@ -131,6 +131,30 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 1.5 Founder Interview Video */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <div className="text-center mb-8 space-y-3">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest block font-manrope">Leadership Perspectives</span>
+          <h2 className="font-manrope font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">
+            A Conversation with Our Director
+          </h2>
+        </div>
+        <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-slate-900 flex items-center justify-center group border border-slate-200">
+          {/* Replace this with an actual iframe or <video> tag when you have the file/link */}
+          <div className="absolute inset-0 bg-slate-800 flex flex-col items-center justify-center text-white space-y-4 p-6 text-center z-10">
+            <div className="h-16 w-16 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors cursor-pointer border border-white/10">
+              <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <p className="font-manrope font-bold text-base text-slate-100 mt-2">Pharm. Iyalla Audu Ali Chris — Founder Interview</p>
+            <p className="text-xs text-slate-400 max-w-sm">
+              Replace this placeholder block with your video embed code (like YouTube iframe) or upload the video file to <code>/public/assets/</code> and use an HTML5 <code>&lt;video&gt;</code> tag here.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 2. Mission & Values */}
       <section className="py-20 bg-white border-y border-slate-100 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -155,7 +179,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-manrope font-bold text-lg text-slate-900">Our Vision</h3>
                 <p className="text-slate-500 text-sm mt-2 leading-relaxed">
-                  To establish the standard of clinical community health, making drug safety, patient support, and same-day delivery universally accessible.
+                  To build a trusted healthcare organization that delivers quality pharmaceutical services, public health solutions, and healthcare consultancy while embracing global best practices, regulatory compliance, and continuous innovation.
                 </p>
               </div>
             </div>
