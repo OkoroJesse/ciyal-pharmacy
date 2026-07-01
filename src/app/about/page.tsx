@@ -30,34 +30,34 @@ export default function AboutPage() {
       role: 'Chief Clinical Pharmacist',
       specialty: 'Cardiovascular Care & Geriatrics',
       bio: 'Sarah has over 12 years of clinical experience managing complex drug therapies and leading community health initiatives.',
-      image: '/assets/clinic-tablet-hands-doctor-patient-600nw-2472677039.webp'
+      image: '/assets/pharmacist-1.jpg'
     },
     {
       name: 'Dr. David Chen, PharmD',
       role: 'Medication Safety Officer',
       specialty: 'Pediatric Care & Drug Interactions',
       bio: 'David specializes in drug interaction analysis, helping patients manage polypharmacy conditions safely and effectively.',
-      image: '/assets/clinic-tablet-hands-doctor-patient-600nw-2472677039.webp'
+      image: '/assets/pharmacist-2.jpg'
     },
     {
       name: 'Dr. Elena Rostova, PharmD',
       role: 'Patient Care Director',
       specialty: 'Diabetes Education & Nutrition',
       bio: 'Elena directs our clinical consultation programs and holds certifications in nutritional therapy and lifestyle counseling.',
-      image: '/assets/clinic-tablet-hands-doctor-patient-600nw-2472677039.webp'
+      image: '/assets/pharmacist-3.jpg'
     }
   ];
 
   const milestones = [
     {
-      year: '2018',
+      year: '2015',
       title: 'Pharmacy Founded',
       description: 'Opened our first physical clinic in the heart of Medicity, offering direct, patient-focused consultations.'
     },
     {
       year: '2020',
       title: 'Express Delivery Launch',
-      description: 'Created our own dedicated local medical courier network to supply medications safely during accessibility lockdowns.'
+      description: 'Created our own dedicated local medical courier to supply medications safely during accessibility lockdowns (Covid 19).'
     },
     {
       year: '2023',
@@ -104,15 +104,15 @@ export default function AboutPage() {
             
             <div className="grid grid-cols-3 gap-6 pt-4">
               <div className="space-y-1">
-                <span className="block font-manrope font-extrabold text-2xl text-primary">10k+</span>
+                <span className="block font-manrope font-extrabold text-2xl text-primary">5000+</span>
                 <span className="block text-xs text-slate-500 font-semibold uppercase tracking-wider">Patients Served</span>
               </div>
               <div className="space-y-1">
-                <span className="block font-manrope font-extrabold text-2xl text-primary">50k+</span>
+                <span className="block font-manrope font-extrabold text-2xl text-primary">7000+</span>
                 <span className="block text-xs text-slate-500 font-semibold uppercase tracking-wider">Prescriptions Filled</span>
               </div>
               <div className="space-y-1">
-                <span className="block font-manrope font-extrabold text-2xl text-primary">15+</span>
+                <span className="block font-manrope font-extrabold text-2xl text-primary">5+</span>
                 <span className="block text-xs text-slate-500 font-semibold uppercase tracking-wider">Medical Awards</span>
               </div>
             </div>

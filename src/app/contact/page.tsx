@@ -71,7 +71,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-1">
                   <span className="block font-manrope font-bold text-slate-800 text-sm">Pharmacy Location</span>
-                  <span className="block text-slate-500 text-xs sm:text-sm">Chikakore Junction, Kubwa, Abuja, Nigeria</span>
+                  <span className="block text-slate-500 text-xs sm:text-sm">Ciyal Pharmacy & stores + chikakore + kubwa+ abuja</span>
                   <a
                     href="#location-map"
                     className="text-xs font-bold text-primary hover:underline inline-flex items-center pt-1"
@@ -233,13 +233,13 @@ export default function ContactPage() {
       <section id="location-map" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="space-y-2 mb-6">
           <h3 className="font-manrope font-extrabold text-xl text-slate-900">Find Us at Kubwa, Abuja</h3>
-          <p className="text-slate-500 text-xs sm:text-sm">We are located at Chikakore Junction, Kubwa, Abuja, Nigeria. Easy access from the Kubwa Expressway.</p>
+          <p className="text-slate-500 text-xs sm:text-sm">We are located at Ciyal Pharmacy & stores + chikakore + kubwa+ abuja.</p>
         </div>
 
         <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-md h-80 sm:h-[420px] w-full">
           <iframe
             title="Ciyal Pharmacy Location – Kubwa, Abuja"
-            src="https://maps.google.com/maps?q=Chikakore+Junction,+Kubwa,+Abuja,+Nigeria&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Ciyal+Pharmacy+%26+stores+%2B+chikakore+%2B+kubwa%2B+abuja&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -252,7 +252,7 @@ export default function ContactPage() {
         {/* Quick directions card */}
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
           <a
-            href="https://www.google.com/maps/search/Chikakore+Junction,+Kubwa,+Abuja,+Nigeria"
+            href="https://www.google.com/maps/search/ciyal+pharmacy+Chikakore+Junction,+Kubwa,+Abuja,+Nigeria"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors shadow-md shadow-primary/15"
@@ -261,7 +261,7 @@ export default function ContactPage() {
             <span>Open in Google Maps</span>
           </a>
           <a
-            href="https://waze.com/ul?q=Chikakore+Junction+Kubwa+Abuja"
+            href="https://waze.com/ul?q=Ciyal+pharmacy+Chikakore+Junction+Kubwa+Abuja"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 hover:text-primary hover:border-primary text-sm font-semibold px-6 py-3 rounded-xl transition-colors"

@@ -74,30 +74,29 @@ export default function HomePage() {
     setReviewIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
 
-  // Auto-advance every 4 seconds
+  // Auto-advance every 40 seconds
   useEffect(() => {
-    const timer = setInterval(goNext, 4000);
+    const timer = setInterval(goNext, 40000);
     return () => clearInterval(timer);
   }, [goNext]);
 
   const stats = [
-    { value: '10,000+', label: 'Local Patients' },
-    { value: '100%', label: 'Certified Medicines' },
-    { value: '15 Mins', label: 'Average Pharmacist Review' },
-    { value: 'Same Day', label: 'Local Delivery' }
+    { value: '5000+', label: 'Patients Served' },
+    { value: '7000+', label: 'Prescriptions Filled' },
+    { value: '5+', label: 'Medical Awards' }
   ];
 
   return (
     <div className="font-inter bg-bg-custom pb-16">
       
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-20 flex items-center min-h-[450px] lg:min-h-[550px]">
+      <section className="relative overflow-hidden pt-20 pb-16 lg:pt-32 lg:pb-20 flex items-center min-h-[350px] sm:min-h-[450px] lg:min-h-[550px]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 bg-slate-900">
           <img 
             src="/assets/hero-bg.jpg" 
             alt="Ciyal Pharmacy Storefront" 
-            className="w-full h-full object-cover object-center opacity-80"
+            className="w-full h-full object-cover object-[center_top] sm:object-center opacity-80"
           />
           {/* Lighter Overlay */}
           <div className="absolute inset-0 bg-slate-900/10" />
@@ -355,32 +354,30 @@ export default function HomePage() {
             <div className="lg:col-span-7">
               <div className="relative overflow-hidden">
                 {/* Slide window */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[reviewIndex, (reviewIndex + 1) % reviews.length].map((ri, slot) => (
-                    <AnimatePresence key={`slot-${slot}`} mode="wait">
-                      <motion.div
-                        key={`review-${ri}-slot-${slot}`}
-                        initial={{ opacity: 0, x: direction * 60 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -direction * 60 }}
-                        transition={{ duration: 0.45, ease: 'easeInOut' }}
-                        className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm flex flex-col"
-                      >
-                        <div className="flex text-amber-500">
-                          {[...Array(reviews[ri].rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-current" />
-                          ))}
-                        </div>
-                        <p className="text-slate-600 text-xs italic leading-relaxed flex-1">
-                          {reviews[ri].text}
-                        </p>
-                        <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
-                          <span className="text-xs font-bold text-slate-800">{reviews[ri].name}</span>
-                          <span className="text-[10px] text-slate-400">{reviews[ri].role}</span>
-                        </div>
-                      </motion.div>
-                    </AnimatePresence>
-                  ))}
+                <div className="max-w-xl mx-auto">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={reviewIndex}
+                      initial={{ opacity: 0, x: direction * 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -direction * 40 }}
+                      transition={{ duration: 0.4 }}
+                      className="bg-white border border-slate-100 p-8 rounded-2xl space-y-5 shadow-sm flex flex-col"
+                    >
+                      <div className="flex text-amber-500">
+                        {[...Array(reviews[reviewIndex].rating)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-current" />
+                        ))}
+                      </div>
+                      <p className="text-slate-600 text-sm italic leading-relaxed flex-1">
+                        {reviews[reviewIndex].text}
+                      </p>
+                      <div className="border-t border-slate-100 pt-4 flex items-center justify-between">
+                        <span className="text-sm font-bold text-slate-800">{reviews[reviewIndex].name}</span>
+                        <span className="text-xs text-slate-400">{reviews[reviewIndex].role}</span>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
 
                 {/* Navigation controls */}

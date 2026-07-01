@@ -70,16 +70,6 @@ export const Footer: React.FC = () => {
             <p className="text-sm text-slate-400 leading-relaxed">
               Redefining local healthcare by combining clinical excellence with modern convenience. Secure prescriptions, expert diagnostics, and fast delivery at your doorstep.
             </p>
-            {/* Payment Badges Placeholder */}
-            <div className="pt-2 flex items-center space-x-2">
-              <span className="text-xs text-slate-500 uppercase tracking-widest font-semibold block mb-1">We Accept:</span>
-              <div className="flex items-center space-x-2 text-slate-400 text-xs">
-                <span className="px-2 py-1 bg-slate-800 rounded font-bold">Visa</span>
-                <span className="px-2 py-1 bg-slate-800 rounded font-bold">MC</span>
-                <span className="px-2 py-1 bg-slate-800 rounded font-bold">Apple Pay</span>
-                <span className="px-2 py-1 bg-slate-800 rounded font-bold">Insurance</span>
-              </div>
-            </div>
           </div>
 
           {/* Links Col */}
@@ -110,7 +100,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm text-slate-400">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span>Chikakore Junction, Kubwa,<br />Abuja, Nigeria</span>
+                <span>Ciyal Pharmacy & stores + chikakore + kubwa+ abuja</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-slate-400">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
