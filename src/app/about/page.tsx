@@ -140,15 +140,16 @@ export default function AboutPage() {
           </h2>
         </div>
         <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-xl bg-slate-900 flex items-center justify-center border border-slate-200">
-          <video
-            className="w-full h-full object-cover"
-            controls
-            preload="metadata"
-            poster="/assets/founder.jpg"
-          >
-            <source src="/assets/ciyal interview 2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/SqjXKNPnQi8?si=WIbi5gc5VYHNMfEq"
+            title="Pharm. Iyalla Audu Ali Chris — Founder Interview"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
 
