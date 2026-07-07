@@ -26,24 +26,24 @@ export default function AboutPage() {
 
   const pharmacists = [
     {
-      name: 'Dr. Sarah Jenkins, PharmD',
-      role: 'Chief Clinical Pharmacist',
-      specialty: 'Cardiovascular Care & Geriatrics',
-      bio: 'Sarah has over 12 years of clinical experience managing complex drug therapies and leading community health initiatives.',
+      name: 'Pharm. Iyalla Audu Ali Chris',
+      role: 'Director, Ciyal Healthcare Ltd',
+      specialty: 'Consultant Clinical Pharmacist & Public Health Expert',
+      bio: 'Iyalla Audu has over 17 years of clinical experience managing complex drug therapies and leading community health initiatives.',
       image: '/assets/pharmacist-1.jpg'
     },
     {
-      name: 'Dr. David Chen, PharmD',
-      role: 'Medication Safety Officer',
-      specialty: 'Pediatric Care & Drug Interactions',
-      bio: 'David specializes in drug interaction analysis, helping patients manage polypharmacy conditions safely and effectively.',
+      name: 'Pharm.Ogianaku Aminu ',
+      role: 'Snr. Pharm. Patner & Clinical Consultant',
+      specialty: 'Public Health',
+      bio: 'Ogianaku Aminu specializes in drug interaction analysis, helping patients manage polypharmacy conditions safely and effectively.',
       image: '/assets/pharmacist-2.jpg'
     },
     {
-      name: 'Dr. Elena Rostova, PharmD',
-      role: 'Patient Care Director',
-      specialty: 'Diabetes Education & Nutrition',
-      bio: 'Elena directs our clinical consultation programs and holds certifications in nutritional therapy and lifestyle counseling.',
+      name: 'Pharm. Bassey Paul Charles ',
+      role: 'Snr. Pharm. ',
+      specialty: 'Community Pharmacist',
+      bio: 'Bassey Paul Charles leads our community outreach efforts and provides personalized medication management services.',
       image: '/assets/pharmacist-3.jpg'
     }
   ];
