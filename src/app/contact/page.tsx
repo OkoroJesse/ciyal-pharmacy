@@ -15,20 +15,44 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate sending delay
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ciyalpharmacy@yahoo.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Contact Form Submission: ${subject}`,
+          name,
+          email,
+          phone,
+          subject,
+          message,
+          _captcha: 'false' // Disables the captcha for AJAX requests
+        })
+      });
+
+      if (response.ok) {
+        setSent(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('An error occurred while sending your message. Please try again later.');
+    } finally {
       setLoading(false);
-      setSent(true);
-      setName('');
-      setEmail('');
-      setPhone('');
-      setMessage('');
-      setTimeout(() => setSent(false), 5000); // Clear after 5s
-    }, 1500);
+    }
   };
 
   return (
