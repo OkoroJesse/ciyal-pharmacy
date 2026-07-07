@@ -228,11 +228,11 @@ export default function AboutPage() {
               key={idx}
               className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm premium-shadow-hover hover:border-primary/20 flex flex-col"
             >
-              <div className="h-56 bg-slate-50 flex items-center justify-center overflow-hidden shrink-0">
+              <div className="h-64 sm:h-72 bg-slate-50 flex items-center justify-center overflow-hidden shrink-0">
                 <img
                   src={ph.image}
                   alt={ph.name}
-                  className={`w-full h-full object-cover ${ph.imagePosition || 'object-top'}`}
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
