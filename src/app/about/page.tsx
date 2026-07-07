@@ -231,7 +231,7 @@ export default function AboutPage() {
                 <img
                   src={ph.image}
                   alt={ph.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
