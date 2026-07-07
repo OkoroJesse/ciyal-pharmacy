@@ -20,20 +20,19 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/ciyalpharmacy@yahoo.com', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          _subject: `New Contact Form Submission: ${subject}`,
-          name,
+          access_key: 'df0eda08-9cf3-4aea-b918-7a381fdaf59a',
+          subject: `New Contact Form Submission: ${subject}`,
+          from_name: name,
           email,
           phone,
-          subject,
           message,
-          _captcha: 'false' // Disables the captcha for AJAX requests
         })
       });
 
