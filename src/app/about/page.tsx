@@ -30,7 +30,8 @@ export default function AboutPage() {
       role: 'Director, Ciyal Healthcare Ltd',
       specialty: 'Consultant Clinical Pharmacist & Public Health Expert',
       bio: 'Iyalla Audu has over 17 years of clinical experience managing complex drug therapies and leading community health initiatives.',
-      image: '/assets/pharmacist-1.jpg'
+      image: '/assets/pharmacist-1.jpg',
+      imagePosition: 'object-[center_30%]'
     },
     {
       name: 'Pharm.Ogianaku Aminu ',
@@ -231,7 +232,7 @@ export default function AboutPage() {
                 <img
                   src={ph.image}
                   alt={ph.name}
-                  className="w-full h-full object-cover object-top"
+                  className={`w-full h-full object-cover ${ph.imagePosition || 'object-top'}`}
                 />
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
