@@ -7,6 +7,7 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { PrescriptionUploadModal } from '@/components/PrescriptionUploadModal';
 import { Preloader } from '@/components/Preloader';
 import { BookingModal } from '@/components/BookingModal';
+import { FloatingWhatsApp, MobileStickyBar } from '@/components/CTASections';
 
 export const viewport = {
   width: 'device-width',
@@ -46,6 +47,9 @@ export default function RootLayout({
           <CartDrawer />
           <PrescriptionUploadModal />
           <BookingModal />
+          {/* Global Floating CTAs */}
+          <FloatingWhatsApp />
+          <MobileStickyBar />
         </CartProvider>
       </body>
     </html>

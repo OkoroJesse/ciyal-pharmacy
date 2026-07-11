@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { Upload, ShoppingBag, ShieldCheck, Heart, Clock, ChevronRight, ChevronLeft, Star, Plus, Minus } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+  HeroCTAStrip,
+  ServicesCTABanner,
+  FindMedicineCTA,
+  TrustCTA,
+  PreFooterCTA,
+} from '@/components/CTASections';
 
 export default function HomePage() {
   const { setIsPrescriptionOpen } = useCart();
@@ -31,7 +38,7 @@ export default function HomePage() {
     },
     {
       q: 'Are all your medications licensed and certified?',
-      a: 'Absolutely. Ciyal Pharmacy is fully licensed and regulated by the national medical boards. All medications are sourced directly from FDA-approved manufacturers and certified distributors, maintaining strict temperature controls during transport and storage.'
+      a: 'Absolutely. Ciyal Pharmacy is fully licensed and regulated by the Pharmacy Council of Nigeria. All medications are sourced directly from FDA-approved manufacturers and certified distributors, maintaining strict temperature controls during transport and storage.'
     }
   ];
 
@@ -179,6 +186,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Hero CTA Strip */}
+      <HeroCTAStrip />
+
       {/* 2. Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -229,6 +239,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Post-Services Premium CTA */}
+      <ServicesCTABanner />
+
       {/* 2.5 Director / Founder Section */}
       <section className="py-20 bg-slate-50/50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -273,6 +286,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Find Medicine CTA */}
+      <FindMedicineCTA />
 
       {/* 3. How It Works Flow */}
       <section className="py-20 bg-bg-custom">
@@ -323,6 +339,9 @@ export default function HomePage() {
 
 
 
+
+      {/* Trust CTA after How It Works */}
+      <TrustCTA />
 
       {/* 5. Clinical Testimonials */}
       <section className="py-20 bg-slate-50/50 border-y border-slate-100">
@@ -496,6 +515,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Pre-Footer Full-Width CTA */}
+      <PreFooterCTA />
 
     </div>
   );

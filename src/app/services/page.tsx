@@ -52,7 +52,7 @@ export default function ServicesPage() {
     {
       id: 's6',
       title: 'Health Screenings',
-      description: 'Rapid health screening tests including blood glucose, cholesterol monitoring, and basic biometric screenings with immediate digital report sheets.',
+      description: 'Rapid health screening tests including blood glucose, cholesterol monitoring, and basic biometric screenings.',
       iconName: 'Activity',
       ctaText: 'Schedule Screening',
       onClick: () => window.location.href = '/contact'
