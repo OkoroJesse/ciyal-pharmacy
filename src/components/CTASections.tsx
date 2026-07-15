@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const WHATSAPP_NUMBER = '2348039144988';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20pharmacist.`;
+const WHATSAPP_BOOKING_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Ciyal%20Pharmacy%2C%20I%20would%20like%20to%20book%20an%20appointment.`;
 const MAPS_URL = 'https://www.google.com/maps/search/Ciyal+Pharmacy+%26+stores+chikakore+kubwa+abuja';
 const PHONE = 'tel:+2348039144988';
 
@@ -244,90 +245,107 @@ export const TrustCTA: React.FC = () => {
 /* ─── 5. Pre-Footer Full-Width CTA ───────────────────────────────────── */
 export const PreFooterCTA: React.FC = () => {
   const badges = [
-    '✓ Genuine Medicines',
     '✓ Licensed Pharmacists',
     '✓ Fast Response',
     '✓ Friendly Support',
   ];
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8 }}
-      className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-primary py-20 sm:py-28"
-    >
-      {/* Decorative circles */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+    <div className="relative mt-0">
+      {/* SVG Wave Divider */}
+      <div className="w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-16 sm:h-20 block"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"
+            fill="#EFF6FF"
+          />
+        </svg>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-300 mb-4 block">Always Here For You</span>
-          <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
-            We're Here Whenever <br className="hidden sm:block" />You Need Us
-          </h2>
-          <p className="mt-4 text-blue-200 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            Whether you need medication, wellness products, or expert pharmaceutical advice, our team is ready to help you live healthier.
-          </p>
-        </motion.div>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+        className="relative overflow-hidden bg-blue-50 py-16 sm:py-24"
+      >
+        {/* Subtle decorative blobs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-16 -left-16 w-72 h-72 bg-primary/6 rounded-full blur-3xl" />
+          <div className="absolute -bottom-16 -right-16 w-72 h-72 bg-accent/8 rounded-full blur-3xl" />
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <motion.a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="btn-premium w-full sm:w-auto flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BA56] text-white font-bold px-8 py-4 rounded-2xl text-sm shadow-xl shadow-black/20 transition-colors"
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <MessageCircle className="h-5 w-5" />
-            Chat with a Pharmacist
-          </motion.a>
-          <motion.a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="btn-premium w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-2xl text-sm backdrop-blur-sm transition-colors"
-          >
-            <MapPin className="h-5 w-5" />
-            Get Directions
-          </motion.a>
-        </motion.div>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-4 block font-manrope">Always Here For You</span>
+            <h2 className="font-manrope font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
+              We're Here Whenever <br className="hidden sm:block" />You Need Us
+            </h2>
+            <p className="mt-4 text-slate-500 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              Whether you need medication, wellness products, or expert pharmaceutical advice, our team is ready to help you live healthier.
+            </p>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
-        >
-          {badges.map((badge, idx) => (
-            <span
-              key={idx}
-              className="flex items-center gap-1.5 text-xs text-blue-200 font-semibold bg-white/5 border border-white/10 px-4 py-2 rounded-full"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <motion.a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="btn-premium w-full sm:w-auto flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BA56] text-white font-bold px-8 py-4 rounded-2xl text-sm shadow-lg shadow-[#25D366]/20 transition-colors"
             >
-              {badge}
-            </span>
-          ))}
-        </motion.div>
-      </div>
-    </motion.section>
+              <MessageCircle className="h-5 w-5" />
+              Chat with a Pharmacist
+            </motion.a>
+            <motion.a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="btn-premium w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold px-8 py-4 rounded-2xl text-sm shadow-sm transition-colors"
+            >
+              <MapPin className="h-5 w-5 text-primary" />
+              Get Directions
+            </motion.a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
+          >
+            {badges.map((badge, idx) => (
+              <span
+                key={idx}
+                className="flex items-center gap-1.5 text-xs text-slate-600 font-semibold bg-white border border-slate-200 px-4 py-2 rounded-full shadow-sm"
+              >
+                {badge}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+    </div>
   );
 };
 

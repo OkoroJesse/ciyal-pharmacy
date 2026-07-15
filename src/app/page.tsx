@@ -483,7 +483,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. Bottom CTA Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-0">
         <div className="bg-primary rounded-3xl p-8 sm:p-12 lg:p-16 text-white text-center relative overflow-hidden shadow-2xl shadow-primary/20">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary to-blue-800 -z-10" />
           {/* Decorative shapes */}
