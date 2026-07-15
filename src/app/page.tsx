@@ -97,91 +97,106 @@ export default function HomePage() {
     <div className="font-inter bg-bg-custom pb-16">
       
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-16 lg:pt-32 lg:pb-20 flex items-center min-h-[350px] sm:min-h-[450px] lg:min-h-[550px]">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0 bg-slate-900">
-          <img 
-            src="/assets/hero-bg.jpg" 
-            alt="Ciyal Pharmacy Storefront" 
-            className="w-full h-full object-cover object-[center_top] sm:object-center opacity-80"
-          />
-          {/* Lighter Overlay */}
-          <div className="absolute inset-0 bg-slate-900/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/20 to-transparent" />
+      <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24 bg-slate-900 text-white">
+        {/* Subtle background glow */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-2xl space-y-6 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center space-x-1.5 bg-secondary/30 text-white border border-secondary/40 text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md"
-            >
-              <ShieldCheck className="h-4 w-4" />
-              <span>Fully Licensed & Clinical Grade</span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-manrope font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.15]"
-            >
-              Your Trusted Neighborhood <br className="hidden sm:inline" />
-              <span className="text-[#38BDF8]">Pharmacy, Simplified.</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-slate-200 text-base sm:text-lg max-w-2xl leading-relaxed"
-            >
-              Get certified medications, expert pharmacist advice, and same-day delivery. Upload your prescription online or visit us in Kubwa, Abuja, and we will handle the rest.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-start gap-4"
-            >
-              <button
-                onClick={() => setIsPrescriptionOpen(true)}
-                className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-xl shadow-primary/20 hover:scale-[1.02] flex items-center justify-center space-x-2"
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Content */}
+            <div className="lg:col-span-7 space-y-6 text-left order-2 lg:order-1">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="inline-flex items-center space-x-1.5 bg-secondary/30 text-white border border-secondary/40 text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-md"
               >
-                <Upload className="h-4 w-4" />
-                <span>Order Prescription Now</span>
-              </button>
-              <Link
-                href="/blog"
-                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-sm flex items-center justify-center space-x-2 hover:scale-[1.02]"
-              >
-                <ShoppingBag className="h-4 w-4 text-[#38BDF8]" />
-                <span>Read Our Blog</span>
-              </Link>
-            </motion.div>
+                <ShieldCheck className="h-4 w-4" />
+                <span>Fully Licensed & Clinical Grade</span>
+              </motion.div>
 
-            {/* Stats Strip */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left"
-            >
-              {stats.map((stat, idx) => (
-                <div key={idx} className="border-l border-white/20 pl-4">
-                  <h3 className="font-manrope font-extrabold text-2xl text-white leading-tight">
-                    {stat.value}
-                  </h3>
-                  <p className="text-xs text-slate-300 font-medium mt-1 uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-manrope font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.15]"
+              >
+                Your Trusted Neighborhood <br className="hidden sm:inline" />
+                <span className="text-[#38BDF8]">Pharmacy, Simplified.</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-slate-200 text-sm sm:text-base leading-relaxed"
+              >
+                Get certified medications, expert pharmacist advice, and same-day delivery. Upload your prescription online or visit us in Kubwa, Abuja, and we will handle the rest.
+              </motion.p>
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-center gap-4"
+              >
+                <button
+                  onClick={() => setIsPrescriptionOpen(true)}
+                  className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-xl shadow-primary/20 hover:scale-[1.02] flex items-center justify-center space-x-2 animate-pulse-slow"
+                >
+                  <Upload className="h-4 w-4" />
+                  <span>Order Prescription Now</span>
+                </button>
+                <Link
+                  href="/blog"
+                  className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-2xl font-semibold text-sm transition-all duration-200 shadow-sm flex items-center justify-center space-x-2 hover:scale-[1.02]"
+                >
+                  <ShoppingBag className="h-4 w-4 text-[#38BDF8]" />
+                  <span>Read Our Blog</span>
+                </Link>
+              </motion.div>
+
+              {/* Stats Strip */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="pt-8 grid grid-cols-3 gap-4 text-left border-t border-white/10"
+              >
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="pl-4 border-l border-white/20">
+                    <h3 className="font-manrope font-extrabold text-xl sm:text-2xl text-white leading-tight">
+                      {stat.value}
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-slate-300 font-medium mt-1 uppercase tracking-wider">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="lg:col-span-5 order-1 lg:order-2 flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800"
+              >
+                <img 
+                  src="/assets/hero-bg.jpg" 
+                  alt="Ciyal Pharmacy Storefront" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </motion.div>
+            </div>
+
           </div>
         </div>
       </section>
