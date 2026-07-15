@@ -86,11 +86,11 @@ export const Navbar: React.FC = () => {
           {/* Action Buttons (Cart, Upload, Contact) */}
           <div className="hidden lg:flex items-center space-x-6">
             <a
-              href="tel:+2348039144988"
+              href="tel:+2349069184683"
               className="flex items-center text-sm font-semibold text-slate-700 hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4 mr-2 text-primary" />
-              <span>+234 803 914 4988</span>
+              <span>+234 906 918 4683</span>
             </a>
 
             {/* Shopping Cart button */}
@@ -185,11 +185,11 @@ export const Navbar: React.FC = () => {
                     <span>Book Appointment</span>
                   </button>
                   <a
-                    href="tel:+2348039144988"
+                    href="tel:+2349069184683"
                     className="flex items-center justify-center text-sm font-semibold text-slate-700 py-3 hover:text-primary transition-colors"
                   >
                     <Phone className="h-4 w-4 mr-2 text-primary" />
-                    <span>+234 9069184683</span>
+                    <span>+234 906 918 4683</span>
                   </a>
                 </div>
               </div>

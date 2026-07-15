@@ -30,7 +30,7 @@ export const CartDrawer: React.FC = () => {
       .join('\n');
     const message = `Hello Ciyal Pharmacy, I would like to place an order:\n\n${orderItems}\n\n*Total:* $${cartTotal.toFixed(2)}\n\nPlease advise on the next steps. Thank you!`;
     const encodedText = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/2348039144988?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/2349069184683?text=${encodedText}`;
     
     // Open in new window
     window.open(whatsappUrl, '_blank');

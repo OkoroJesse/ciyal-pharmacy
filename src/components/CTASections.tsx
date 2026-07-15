@@ -8,11 +8,11 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const WHATSAPP_NUMBER = '2348039144988';
+const WHATSAPP_NUMBER = '2349069184683';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20pharmacist.`;
 const WHATSAPP_BOOKING_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Ciyal%20Pharmacy%2C%20I%20would%20like%20to%20book%20an%20appointment.`;
 const MAPS_URL = 'https://www.google.com/maps/search/Ciyal+Pharmacy+%26+stores+chikakore+kubwa+abuja';
-const PHONE = 'tel:+2348039144988';
+const PHONE = 'tel:+2349069184683';
 
 /* ─── 1. Hero CTA Strip ──────────────────────────────────────────────── */
 export const HeroCTAStrip: React.FC = () => {

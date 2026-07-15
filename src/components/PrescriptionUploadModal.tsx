@@ -10,7 +10,7 @@ export const PrescriptionUploadModal: React.FC = () => {
 
   const handleWhatsAppRedirect = () => {
     const text = encodeURIComponent("Hello Ciyal Pharmacy, I would like to send my prescription for review.");
-    window.open(`https://wa.me/2348039144988?text=${text}`, '_blank');
+    window.open(`https://wa.me/2349069184683?text=${text}`, '_blank');
     setIsPrescriptionOpen(false);
   };
 

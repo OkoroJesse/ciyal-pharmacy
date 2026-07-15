@@ -503,7 +503,7 @@ export default function BlogPage() {
                   {/* CTA footer */}
                   <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
                     <a
-                      href="https://wa.me/2348039144988"
+                      href="https://wa.me/2349069184683"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-sm py-3 rounded-xl transition-colors shadow-md shadow-primary/15"
