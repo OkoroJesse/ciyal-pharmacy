@@ -162,6 +162,104 @@ export const mockProducts: Product[] = [
     warnings: 'Pharmacy only. Not for use on facial warts or genital warts. Keep out of reach of children.'
   },
 
+  // ── Pain Relief ───────────────────────────────────────────────────────────
+  {
+    id: 'pr1',
+    name: 'Panadol Extra 500mg/30mg x100',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/panadol-extra.jpg',
+    availability: true,
+    badge: 'Popular',
+    description: 'Paracetamol and Caffeine tablets. Extra effective pain relief that is easy to swallow. Gentle on the stomach.',
+    dosage: 'Adults: Take 1-2 tablets every 4-6 hours as needed. Do not exceed 8 tablets in 24 hours.',
+    warnings: 'Contains Paracetamol. Do not take with any other paracetamol-containing products.'
+  },
+  {
+    id: 'pr2',
+    name: 'Calpol Sixplus Sugar Free Suspension 100ml',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/calpol-sixplus.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'SixPlus sugar free strawberry flavored paracetamol oral suspension for pain and fever relief. Designed for children aged 6+ years.',
+    dosage: 'Use the double-ended spoon provided. Dosing instructions vary by age. Consult package.',
+    warnings: 'Keep out of reach of children. Do not exceed specified dosage.'
+  },
+  {
+    id: 'pr3',
+    name: 'Brustan-N Ibuprofen Oral Suspension 100ml',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/brustan-n.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Ibuprofen oral suspension USP 100mg/5ml. Effective child ibuprofen syrup for fever, aches and pain relief.',
+    dosage: 'Take with or after food. Check weight/age dosage guidelines in packaging.',
+    warnings: 'Do not use if child has stomach ulcers, asthma, or kidney issues.'
+  },
+  {
+    id: 'pr4',
+    name: 'Amitriptylline [Teva] 50mg Tablet x28',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/amitriptylline.jpg',
+    availability: true,
+    badge: 'Prescription Required',
+    description: 'Teva Amitriptyline 50mg tablets. Clinical strength prescription medicine commonly used for neurological pain relief.',
+    dosage: 'Take exactly as prescribed by your medical practitioner.',
+    warnings: 'Rx Only. May cause drowsiness. Avoid alcohol while taking this medicine.'
+  },
+  {
+    id: 'pr5',
+    name: 'Emcap Paracetamol 500mg x100',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/emcap-paracetamol.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Fast, gentle relief from pain and fever in children and adults. Trusted clinical quality paracetamol tablets.',
+    dosage: '1-2 tablets every 4-6 hours as needed. Do not exceed 8 tablets in 24 hours.',
+    warnings: 'Do not take with other paracetamol products. Keep out of reach of children.'
+  },
+  {
+    id: 'pr6',
+    name: 'M&B Paracetamol 500mg x96',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/mb-paracetamol.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Effective on pain, gentle on the stomach. Quick acting paracetamol tablets for rapid fever and headache relief.',
+    dosage: '1-2 tablets every 4-6 hours. Max 8 tablets in 24 hours.',
+    warnings: 'Consult a pharmacist before use. Keep in a dry, cool place.'
+  },
+  {
+    id: 'pr7',
+    name: 'Panadol Cold + Flu X24',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/panadol-cold-flu.jpg',
+    availability: true,
+    badge: 'Popular',
+    description: 'Multi-symptom relief from cold and flu symptoms including blocked nose, sore throat, headache, body aches, and fever.',
+    dosage: 'Adults and children over 12: 2 caplets up to 4 times daily. Do not exceed 8 caplets in 24 hours.',
+    warnings: 'May cause drowsiness. Do not drive or operate machinery if affected.'
+  },
+  {
+    id: 'pr8',
+    name: 'Zyncet Cetirizine 10mg x50',
+    price: 0,
+    category: 'Pain Relief',
+    image: '/assets/zyncet-cetrizine.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Anti-allergy medication providing relief from runny nose, watery eyes, sneezing, hives and itching.',
+    dosage: 'One tablet daily or as directed by a healthcare professional.',
+    warnings: 'May cause drowsiness in some individuals. Keep out of reach of children.'
+  },
+
   // ── Vitamins ──────────────────────────────────────────────────────────────
   {
     id: 'p1',
@@ -174,20 +272,6 @@ export const mockProducts: Product[] = [
     description: 'High-potency dietary supplement formulated to boost immune response, support cardiovascular health, and promote radiant skin vitality.',
     dosage: 'Take 1 tablet daily with a meal.',
     warnings: 'Consult your physician if pregnant or nursing.'
-  },
-
-  // ── Pain Relief ───────────────────────────────────────────────────────────
-  {
-    id: 'p2',
-    name: 'Paracetamol Extra 500mg',
-    price: 0,
-    category: 'Pain Relief',
-    image: '/assets/paracetamol.jpg',
-    availability: true,
-    badge: 'In Stock',
-    description: 'Rapid acting analgesic and antipyretic for effective relief from mild-to-moderate headaches, dental pain, and fever symptoms.',
-    dosage: 'Adults: 1-2 tablets every 4-6 hours as needed. Max 8 tablets in 24 hours.',
-    warnings: 'Contains paracetamol. Do not take with other paracetamol products.'
   },
 
   // ── Diabetes ──────────────────────────────────────────────────────────────

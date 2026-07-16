@@ -15,12 +15,26 @@ const WHATSAPP_NUMBER = '2349069184683';
 export const FeaturedProducts: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const filters = ['All', 'Vitamins', 'Pain Relief', 'Baby Care', 'Diabetes', 'Wellness', 'Personal Care'];
+  const ITEMS_PER_PAGE = 9;
+
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    setCurrentPage(1);
+  };
 
   const filteredProducts = activeFilter === 'All' 
     ? mockProducts 
     : mockProducts.filter(p => p.category.toLowerCase() === activeFilter.toLowerCase());
+
+  const isAllFilter = activeFilter === 'All';
+  const paginatedProducts = isAllFilter 
+    ? filteredProducts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE) 
+    : filteredProducts;
+
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
   const handleWhatsAppOrder = (product: Product) => {
     const text = encodeURIComponent(`Hello Ciyal Pharmacy, I would like to inquire about the availability of: ${product.name}`);
@@ -89,7 +103,7 @@ export const FeaturedProducts: React.FC = () => {
             return (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => handleFilterChange(filter)}
                 className={`relative px-5 py-2.5 rounded-full text-xs font-bold font-manrope transition-all duration-200 cursor-pointer ${
                   isActive 
                     ? 'text-white shadow-md shadow-primary/10' 
@@ -112,10 +126,10 @@ export const FeaturedProducts: React.FC = () => {
         {/* Product Grid */}
         <motion.div 
           layout 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product) => (
+            {paginatedProducts.map((product) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -195,6 +209,41 @@ export const FeaturedProducts: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Pagination UI - Only show on 'All' category if totalPages > 1 */}
+        {isAllFilter && totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 mb-20">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className="px-4 py-2 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl text-xs hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            >
+              Previous
+            </button>
+            
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-9 h-9 font-bold rounded-xl text-xs transition-colors cursor-pointer ${
+                  currentPage === page
+                    ? 'bg-primary text-white shadow-md shadow-primary/10'
+                    : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl text-xs hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            >
+              Next
+            </button>
+          </div>
+        )}
 
         {/* Centered CTA Help Banner */}
         <motion.div
