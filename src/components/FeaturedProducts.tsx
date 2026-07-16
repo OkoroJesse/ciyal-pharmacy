@@ -17,7 +17,7 @@ export const FeaturedProducts: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const filters = ['All', 'Vitamins', 'Pain Relief', 'Baby Care', 'Diabetes', 'Wellness', 'Personal Care'];
+  const filters = ['All', 'Pain Relief', 'Baby Care', 'Wellness', 'Personal Care'];
   const ITEMS_PER_PAGE = 9;
 
   const handleFilterChange = (filter: string) => {

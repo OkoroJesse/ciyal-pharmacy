@@ -260,43 +260,4 @@ export const mockProducts: Product[] = [
     warnings: 'May cause drowsiness in some individuals. Keep out of reach of children.'
   },
 
-  // ── Vitamins ──────────────────────────────────────────────────────────────
-  {
-    id: 'p1',
-    name: 'Premium Vitamin C 1000mg (100 Tabs)',
-    price: 0,
-    category: 'Vitamins',
-    image: '/assets/ADH_Vitamin-C.jpg',
-    availability: true,
-    badge: 'Popular',
-    description: 'High-potency dietary supplement formulated to boost immune response, support cardiovascular health, and promote radiant skin vitality.',
-    dosage: 'Take 1 tablet daily with a meal.',
-    warnings: 'Consult your physician if pregnant or nursing.'
-  },
-
-  // ── Diabetes ──────────────────────────────────────────────────────────────
-  {
-    id: 'p3',
-    name: 'Blood Glucose Monitoring System',
-    price: 0,
-    category: 'Diabetes',
-    image: '/assets/images.jpg',
-    availability: true,
-    badge: 'Popular',
-    description: 'State-of-the-art monitor delivering precise glucose readings in 5 seconds. Includes 50 test strips, lancets, and lancing device.',
-    dosage: 'Use test strips only once. Read manual carefully before monitoring.',
-    warnings: 'Consult your endocrinologist to interpret results.'
-  },
-  {
-    id: 'p5',
-    name: 'Metformin Hydrochloride 500mg',
-    price: 0,
-    category: 'Diabetes',
-    image: '/assets/amocilicin.jpg',
-    availability: true,
-    badge: 'Prescription Required',
-    description: 'Prescription oral medication for managing blood glucose levels in adults with type 2 diabetes mellitus.',
-    dosage: 'Take with meals exactly as prescribed by your physician.',
-    warnings: 'Rx Only. Risk of lactic acidosis; consult doctor immediately if feeling unwell.'
-  },
 ];
