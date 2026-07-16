@@ -23,7 +23,7 @@ export const FeaturedProducts: React.FC = () => {
     : mockProducts.filter(p => p.category.toLowerCase() === activeFilter.toLowerCase());
 
   const handleWhatsAppOrder = (product: Product) => {
-    const text = encodeURIComponent(`Hello Ciyal Pharmacy, I would like to order: ${product.name} (₦${product.price.toLocaleString()})`);
+    const text = encodeURIComponent(`Hello Ciyal Pharmacy, I would like to inquire about the availability of: ${product.name}`);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
   };
 
@@ -168,8 +168,8 @@ export const FeaturedProducts: React.FC = () => {
                   </div>
 
                   <div className="pt-2">
-                    <span className="text-lg font-extrabold text-primary">
-                      ₦{product.price.toLocaleString()}
+                    <span className="text-sm font-semibold text-primary">
+                      Chat for Availability
                     </span>
                   </div>
                 </div>
@@ -287,8 +287,8 @@ export const FeaturedProducts: React.FC = () => {
                     <h3 className="font-manrope font-bold text-slate-900 text-lg leading-snug">
                       {selectedProduct.name}
                     </h3>
-                    <p className="text-lg font-extrabold text-primary mt-1">
-                      ₦{selectedProduct.price.toLocaleString()}
+                    <p className="text-sm font-semibold text-primary mt-1">
+                      Chat for Availability
                     </p>
                     <span className={`inline-block text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider mt-2 border ${
                       selectedProduct.badge === 'Prescription Required'

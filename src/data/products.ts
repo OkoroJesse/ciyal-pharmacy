@@ -16,7 +16,7 @@ export const mockProducts: Product[] = [
   {
     id: 'w1',
     name: 'Relumins Thio-Glow 180 Chewables',
-    price: 30210,
+    price: 0,
     category: 'Wellness',
     image: '/assets/relumins-thio-glow.jpg',
     availability: true,
@@ -28,7 +28,7 @@ export const mockProducts: Product[] = [
   {
     id: 'w2',
     name: 'Fohow Garlic Softgel 60 Caps',
-    price: 4080,
+    price: 0,
     category: 'Wellness',
     image: '/assets/fohow-garlic-softgel.jpg',
     availability: true,
@@ -40,7 +40,7 @@ export const mockProducts: Product[] = [
   {
     id: 'w3',
     name: 'Krispine HB 12 Plus (Chewable)',
-    price: 2290,
+    price: 0,
     category: 'Wellness',
     image: '/assets/krispine-hb12.jpg',
     availability: true,
@@ -52,7 +52,7 @@ export const mockProducts: Product[] = [
   {
     id: 'w4',
     name: 'Bio Wel Hyper-Wel',
-    price: 6750,
+    price: 0,
     category: 'Wellness',
     image: '/assets/bio-wel-hyper-wel.jpg',
     availability: true,
@@ -64,7 +64,7 @@ export const mockProducts: Product[] = [
   {
     id: 'w5',
     name: 'Immune-Activ Vitamin C + Zinc & Selenium',
-    price: 7380,
+    price: 0,
     category: 'Wellness',
     image: '/assets/immune-activ-vitamin-c.jpg',
     availability: true,
@@ -76,7 +76,7 @@ export const mockProducts: Product[] = [
   {
     id: 'w6',
     name: 'Ivory Caps Vitamin C Brightening Plus',
-    price: 14650,
+    price: 0,
     category: 'Wellness',
     image: '/assets/ivory-caps-vitamin-c.jpg',
     availability: true,
@@ -86,11 +86,87 @@ export const mockProducts: Product[] = [
     warnings: 'For adults only. Consult a healthcare professional before use if you have any medical condition.'
   },
 
-  // ── Other Categories ──────────────────────────────────────────────────────
+  // ── Baby Care ─────────────────────────────────────────────────────────────
+  {
+    id: 'b1',
+    name: 'Kids & Teens Body Milk S/S',
+    price: 0,
+    category: 'Baby Care',
+    image: '/assets/kids-teens-body-milk.png',
+    availability: true,
+    badge: 'Popular',
+    description: 'Clinically mild tone proven moisturizing body milk with multi-vitamins. Daily rejuvenating soft, toning and nourishing formula for kids and teens.',
+    dosage: 'Apply generously to skin daily after bathing.',
+    warnings: 'For external use only. Keep out of reach of young children.'
+  },
+  {
+    id: 'b2',
+    name: 'Huggies Pure Baby Wipes',
+    price: 0,
+    category: 'Baby Care',
+    image: '/assets/huggies-baby-wipes.png',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Gentle and pure baby wipes with 99% pure water. Dermatologically tested and hypoallergenic for sensitive newborn skin.',
+    dosage: 'Use as needed for gentle cleansing during diaper changes.',
+    warnings: 'For external use only. Do not flush. Keep away from infants\' eyes.'
+  },
+  {
+    id: 'b3',
+    name: 'Cussons Baby Lotion 200ml',
+    price: 0,
+    category: 'Baby Care',
+    image: '/assets/cussons-baby-lotion.png',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Specially formulated soft and smooth baby lotion that gently moisturises and protects delicate baby skin while keeping it supple.',
+    dosage: 'Apply to baby\'s body after bath. Massage gently into skin.',
+    warnings: 'Avoid contact with eyes. For external use only.'
+  },
+
+  // ── Personal Care ─────────────────────────────────────────────────────────
+  {
+    id: 'pc1',
+    name: 'Kenacomb Cream 20g',
+    price: 0,
+    category: 'Personal Care',
+    image: '/assets/kenacomb-cream.png',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Multi-action pharmaceutical cream containing Nystatin, Neomycin Sulfate, Gramicidin and Triamcinolone Acetonide for skin infections.',
+    dosage: 'Apply a thin layer to the affected area 2-4 times daily as directed.',
+    warnings: 'Rx Only. For external use only. Not for ophthalmic use. Consult your doctor.'
+  },
+  {
+    id: 'pc2',
+    name: 'Mycota Cream 25g',
+    price: 0,
+    category: 'Personal Care',
+    image: '/assets/mycota-cream.png',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Effective antifungal cream for the treatment of athlete\'s foot and other fungal skin infections between toes and on feet.',
+    dosage: 'Apply to affected areas twice daily, morning and evening.',
+    warnings: 'For external use only. Keep away from eyes. Discontinue if irritation occurs.'
+  },
+  {
+    id: 'pc3',
+    name: 'Bazuka Extra Strength Gel 5g',
+    price: 0,
+    category: 'Personal Care',
+    image: '/assets/bazuka-gel.png',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Extra strength treatment for verrucas, warts, corns and calluses. Forms a water-resistant protective barrier for effective once-daily application.',
+    dosage: 'Apply once daily to the affected area. No plaster necessary.',
+    warnings: 'Pharmacy only. Not for use on facial warts or genital warts. Keep out of reach of children.'
+  },
+
+  // ── Vitamins ──────────────────────────────────────────────────────────────
   {
     id: 'p1',
     name: 'Premium Vitamin C 1000mg (100 Tabs)',
-    price: 7500,
+    price: 0,
     category: 'Vitamins',
     image: '/assets/ADH_Vitamin-C.jpg',
     availability: true,
@@ -99,10 +175,12 @@ export const mockProducts: Product[] = [
     dosage: 'Take 1 tablet daily with a meal.',
     warnings: 'Consult your physician if pregnant or nursing.'
   },
+
+  // ── Pain Relief ───────────────────────────────────────────────────────────
   {
     id: 'p2',
     name: 'Paracetamol Extra 500mg',
-    price: 1200,
+    price: 0,
     category: 'Pain Relief',
     image: '/assets/paracetamol.jpg',
     availability: true,
@@ -111,10 +189,12 @@ export const mockProducts: Product[] = [
     dosage: 'Adults: 1-2 tablets every 4-6 hours as needed. Max 8 tablets in 24 hours.',
     warnings: 'Contains paracetamol. Do not take with other paracetamol products.'
   },
+
+  // ── Diabetes ──────────────────────────────────────────────────────────────
   {
     id: 'p3',
     name: 'Blood Glucose Monitoring System',
-    price: 22500,
+    price: 0,
     category: 'Diabetes',
     image: '/assets/images.jpg',
     availability: true,
@@ -124,21 +204,9 @@ export const mockProducts: Product[] = [
     warnings: 'Consult your endocrinologist to interpret results.'
   },
   {
-    id: 'p4',
-    name: 'Hydrating Ceramide Lotion',
-    price: 12000,
-    category: 'Personal Care',
-    image: '/assets/images-117.webp',
-    availability: true,
-    badge: 'In Stock',
-    description: 'Dermatologist-recommended daily skin barrier repair formula, enriched with ceramides and hyaluronic acid for dry, sensitive skin.',
-    dosage: 'Apply liberally as often as needed, or as directed by a dermatologist.',
-    warnings: 'For external use only. Avoid contact with eyes.'
-  },
-  {
     id: 'p5',
     name: 'Metformin Hydrochloride 500mg',
-    price: 4500,
+    price: 0,
     category: 'Diabetes',
     image: '/assets/amocilicin.jpg',
     availability: true,
@@ -147,40 +215,4 @@ export const mockProducts: Product[] = [
     dosage: 'Take with meals exactly as prescribed by your physician.',
     warnings: 'Rx Only. Risk of lactic acidosis; consult doctor immediately if feeling unwell.'
   },
-  {
-    id: 'p7',
-    name: 'Infant Ibuprofen Oral Suspension',
-    price: 3500,
-    category: 'Baby Care',
-    image: '/assets/paracetamol.jpg',
-    availability: true,
-    badge: 'In Stock',
-    description: 'Fever reducer and pain reliever specially formulated for infants, orange-flavored. Includes syringe for precise dosing.',
-    dosage: 'Dose according to weight using the provided syringe. Consult pediatrician.',
-    warnings: 'Do not use under 3 months of age. Keep out of reach of children.'
-  },
-  {
-    id: 'p9',
-    name: 'Gentle Baby Moisturizing Cream',
-    price: 5200,
-    category: 'Baby Care',
-    image: '/assets/images-117.webp',
-    availability: true,
-    badge: 'Popular',
-    description: 'Clinically proven mild formula designed to protect and soothe baby\'s delicate skin barrier against chafing and irritation.',
-    dosage: 'Smooth over baby\'s body daily or as needed, especially after bathing.',
-    warnings: 'Hypoallergenic. Keep out of reach of infants to avoid accidental ingestion.'
-  },
-  {
-    id: 'p10',
-    name: 'Antibacterial Hand Cleansing Gel',
-    price: 1800,
-    category: 'Personal Care',
-    image: '/assets/images-117.webp',
-    availability: true,
-    badge: 'In Stock',
-    description: 'Instant rinse-free hand sanitizer gel that eliminates 99.9% of common germs. Enriched with aloe vera extract to prevent drying.',
-    dosage: 'Rub small amount thoroughly over dry hands until absorbed.',
-    warnings: 'Flammable. Keep away from fire or flame. External use only.'
-  }
 ];
