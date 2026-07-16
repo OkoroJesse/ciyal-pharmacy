@@ -12,10 +12,85 @@ export interface Product {
 }
 
 export const mockProducts: Product[] = [
+  // ── Wellness ──────────────────────────────────────────────────────────────
+  {
+    id: 'w1',
+    name: 'Relumins Thio-Glow 180 Chewables',
+    price: 30210,
+    category: 'Wellness',
+    image: '/assets/relumins-thio-glow.jpg',
+    availability: true,
+    badge: 'Popular',
+    description: 'Premium glutathione complex chewable lozenges for skin brightening, antioxidant support and overall cellular health.',
+    dosage: 'Take 1–2 lozenges daily, preferably on an empty stomach.',
+    warnings: 'Not recommended for pregnant or breastfeeding women without doctor approval.'
+  },
+  {
+    id: 'w2',
+    name: 'Fohow Garlic Softgel 60 Caps',
+    price: 4080,
+    category: 'Wellness',
+    image: '/assets/fohow-garlic-softgel.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Concentrated garlic essence oil softgels that support cardiovascular health, immunity, and natural detoxification.',
+    dosage: 'Take 1–2 softgels daily with water after meals.',
+    warnings: 'Consult your physician if you are on blood-thinning medication.'
+  },
+  {
+    id: 'w3',
+    name: 'Krispine HB 12 Plus (Chewable)',
+    price: 2290,
+    category: 'Wellness',
+    image: '/assets/krispine-hb12.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Fortified with Ginseng, Selenium, Zinc, Iodine, B-Complex and Vitamins to support red blood cell formation and reduce fatigue.',
+    dosage: 'Chew 1 tablet daily or as directed by your healthcare provider.',
+    warnings: 'Keep out of reach of children. Do not exceed recommended dose.'
+  },
+  {
+    id: 'w4',
+    name: 'Bio Wel Hyper-Wel',
+    price: 6750,
+    category: 'Wellness',
+    image: '/assets/bio-wel-hyper-wel.jpg',
+    availability: true,
+    badge: 'In Stock',
+    description: 'Advanced herbal antihypertensive formula combining natural extracts to help maintain healthy blood pressure levels.',
+    dosage: 'Take as directed by your healthcare practitioner.',
+    warnings: 'Not a substitute for prescribed hypertension medication. Consult your doctor.'
+  },
+  {
+    id: 'w5',
+    name: 'Immune-Activ Vitamin C + Zinc & Selenium',
+    price: 7380,
+    category: 'Wellness',
+    image: '/assets/immune-activ-vitamin-c.jpg',
+    availability: true,
+    badge: 'Popular',
+    description: 'High-strength 1000mg Vitamin C combined with Zinc and Selenium for maximum immune system activation and antioxidant defence.',
+    dosage: 'Take 1 tablet daily with water, preferably with a meal.',
+    warnings: 'Do not exceed the recommended daily intake. Keep out of reach of children.'
+  },
+  {
+    id: 'w6',
+    name: 'Ivory Caps Vitamin C Brightening Plus',
+    price: 14650,
+    category: 'Wellness',
+    image: '/assets/ivory-caps-vitamin-c.jpg',
+    availability: true,
+    badge: 'Popular',
+    description: 'Advanced brightening supplement with 100% natural dietary formula in 60 capsules to promote even skin tone and antioxidant support.',
+    dosage: 'Take 1–2 capsules daily with water.',
+    warnings: 'For adults only. Consult a healthcare professional before use if you have any medical condition.'
+  },
+
+  // ── Other Categories ──────────────────────────────────────────────────────
   {
     id: 'p1',
-    name: 'Premium Vitamin C 1000mg',
-    price: 14.99,
+    name: 'Premium Vitamin C 1000mg (100 Tabs)',
+    price: 7500,
     category: 'Vitamins',
     image: '/assets/ADH_Vitamin-C.jpg',
     availability: true,
@@ -27,7 +102,7 @@ export const mockProducts: Product[] = [
   {
     id: 'p2',
     name: 'Paracetamol Extra 500mg',
-    price: 4.99,
+    price: 1200,
     category: 'Pain Relief',
     image: '/assets/paracetamol.jpg',
     availability: true,
@@ -39,7 +114,7 @@ export const mockProducts: Product[] = [
   {
     id: 'p3',
     name: 'Blood Glucose Monitoring System',
-    price: 39.99,
+    price: 22500,
     category: 'Diabetes',
     image: '/assets/images.jpg',
     availability: true,
@@ -51,7 +126,7 @@ export const mockProducts: Product[] = [
   {
     id: 'p4',
     name: 'Hydrating Ceramide Lotion',
-    price: 22.00,
+    price: 12000,
     category: 'Personal Care',
     image: '/assets/images-117.webp',
     availability: true,
@@ -63,7 +138,7 @@ export const mockProducts: Product[] = [
   {
     id: 'p5',
     name: 'Metformin Hydrochloride 500mg',
-    price: 12.50,
+    price: 4500,
     category: 'Diabetes',
     image: '/assets/amocilicin.jpg',
     availability: true,
@@ -73,21 +148,9 @@ export const mockProducts: Product[] = [
     warnings: 'Rx Only. Risk of lactic acidosis; consult doctor immediately if feeling unwell.'
   },
   {
-    id: 'p6',
-    name: 'Advanced Antiseptic Wound Dressings',
-    price: 15.99,
-    category: 'Wellness',
-    image: '/assets/clinic-tablet-hands-doctor-patient-600nw-2472677039.webp',
-    availability: true,
-    badge: 'In Stock',
-    description: 'Clinical-grade sterile dressing pads with non-stick layer, ideal for post-surgical care and minor accident wound healing.',
-    dosage: 'Apply to clean, dry wounds. Change dressing daily or as directed.',
-    warnings: 'Seek immediate clinical attention for deep or infected wounds.'
-  },
-  {
     id: 'p7',
     name: 'Infant Ibuprofen Oral Suspension',
-    price: 8.99,
+    price: 3500,
     category: 'Baby Care',
     image: '/assets/paracetamol.jpg',
     availability: true,
@@ -97,21 +160,9 @@ export const mockProducts: Product[] = [
     warnings: 'Do not use under 3 months of age. Keep out of reach of children.'
   },
   {
-    id: 'p8',
-    name: 'Organic Sleep Aid & Melatonin',
-    price: 16.50,
-    category: 'Wellness',
-    image: '/assets/ADH_Vitamin-C.jpg',
-    availability: true,
-    badge: 'In Stock',
-    description: 'Soothing natural blend of chamomile, valerian root, and melatonin to support healthy circadian rhythms and restful sleep patterns.',
-    dosage: 'Take 2 capsules 30 minutes before bedtime.',
-    warnings: 'Do not operate machinery or drive after taking.'
-  },
-  {
     id: 'p9',
     name: 'Gentle Baby Moisturizing Cream',
-    price: 11.50,
+    price: 5200,
     category: 'Baby Care',
     image: '/assets/images-117.webp',
     availability: true,
@@ -123,7 +174,7 @@ export const mockProducts: Product[] = [
   {
     id: 'p10',
     name: 'Antibacterial Hand Cleansing Gel',
-    price: 5.99,
+    price: 1800,
     category: 'Personal Care',
     image: '/assets/images-117.webp',
     availability: true,

@@ -26,9 +26,9 @@ export const CartDrawer: React.FC = () => {
   const handleWhatsAppCheckout = () => {
     // Generate order summary for WhatsApp
     const orderItems = cart
-      .map((item) => `- ${item.name} (${item.quantity}x) - $${(item.price * item.quantity).toFixed(2)}`)
+      .map((item) => `- ${item.name} (${item.quantity}x) - ₦${(item.price * item.quantity).toLocaleString()}`)
       .join('\n');
-    const message = `Hello Ciyal Pharmacy, I would like to place an order:\n\n${orderItems}\n\n*Total:* $${cartTotal.toFixed(2)}\n\nPlease advise on the next steps. Thank you!`;
+    const message = `Hello Ciyal Pharmacy, I would like to place an order:\n\n${orderItems}\n\n*Total:* ₦${cartTotal.toLocaleString()}\n\nPlease advise on the next steps. Thank you!`;
     const encodedText = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/2349069184683?text=${encodedText}`;
     

@@ -84,7 +84,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </h4>
           <div className="flex items-center space-x-2 mt-2">
             <span className="font-manrope font-extrabold text-slate-900 text-lg">
-              ${product.price.toFixed(2)}
+              ₦{product.price.toLocaleString()}
             </span>
             {product.availability && (
               <span className="text-[10px] text-secondary font-bold flex items-center">
