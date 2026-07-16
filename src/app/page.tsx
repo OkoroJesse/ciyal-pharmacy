@@ -12,6 +12,7 @@ import {
   TrustCTA,
   PreFooterCTA,
 } from '@/components/CTASections';
+import { FeaturedProducts } from '@/components/FeaturedProducts';
 
 export default function HomePage() {
   const { setIsPrescriptionOpen } = useCart();
@@ -241,6 +242,9 @@ export default function HomePage() {
 
       {/* Post-Services Premium CTA */}
       <ServicesCTABanner />
+
+      {/* Featured Health Essentials Section */}
+      <FeaturedProducts />
 
       {/* 2.5 Director / Founder Section */}
       <section className="py-20 bg-slate-50/50 border-t border-slate-100">
